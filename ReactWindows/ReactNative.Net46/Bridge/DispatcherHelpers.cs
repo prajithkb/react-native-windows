@@ -9,7 +9,7 @@ namespace ReactNative.Bridge
     {
         private static Dispatcher _dispatcher;
 
-        internal static Dispatcher CurrentDispatcher
+        public static Dispatcher CurrentDispatcher
         {
             get
             {

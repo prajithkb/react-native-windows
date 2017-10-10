@@ -1,7 +1,8 @@
-﻿using ReactNative.Bridge;
+using ReactNative.Bridge;
 using ReactNative.Modules.Core;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace ReactNative.Modules.DeviceInfo
 {
@@ -10,7 +11,7 @@ namespace ReactNative.Modules.DeviceInfo
     /// </summary>
     public class DeviceInfoModule : ReactContextNativeModuleBase, ILifecycleEventListener
     {
-        private readonly Window _window;
+        private readonly UserControl _window;
         private readonly IReadOnlyDictionary<string, object> _constants;
 
         /// <summary>
@@ -20,7 +21,7 @@ namespace ReactNative.Modules.DeviceInfo
         public DeviceInfoModule(ReactContext reactContext)
             : base(reactContext)
         {
-            _window = Application.Current.MainWindow;
+            _window = (UserControl)Application.Current.Properties["RNSPIKE"];
             _constants = new Dictionary<string, object>
             {
                 { "Dimensions", GetDimensions() },
