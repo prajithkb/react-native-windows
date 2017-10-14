@@ -87,7 +87,7 @@
       <HintPath>$(SolutionDir)\packages\PCLStorage.1.0.2\lib\net45\PCLStorage.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Reactive.Core">
+   <Reference Include="System.Reactive.Core">
       <HintPath>$(SolutionDir)\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Reactive.Interfaces">

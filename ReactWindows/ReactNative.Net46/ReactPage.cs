@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using ReactNative.Common;
 using ReactNative.Modules.Core;
@@ -14,7 +14,7 @@ namespace ReactNative
     /// <summary>
     /// Base page for React Native applications.
     /// </summary>
-    public abstract class ReactPage : Page, IAsyncDisposable
+    public abstract class ReactPage : UserControl, IAsyncDisposable
     {
         private readonly Lazy<ReactInstanceManager> _reactInstanceManager;
         private readonly Lazy<ReactRootView> _rootView;
