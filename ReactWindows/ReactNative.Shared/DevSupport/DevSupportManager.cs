@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using ReactNative.Common;
 using ReactNative.Modules.Core;
@@ -142,7 +142,13 @@ namespace ReactNative.DevSupport
         public void HandleException(Exception exception)
         {
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Break();
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                System.Diagnostics.Debugger.Break();
+                Exception e = exception;
+                while (e.InnerException != null) e = e.InnerException;
+                Console.WriteLine("Real cause : " + e.Message);
+            }
 #endif
 
             if (IsEnabled)

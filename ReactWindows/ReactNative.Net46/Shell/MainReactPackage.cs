@@ -1,4 +1,4 @@
-﻿using ReactNative.Animated;
+using ReactNative.Animated;
 using ReactNative.Bridge;
 using ReactNative.Modules.AppState;
 using ReactNative.Modules.Clipboard;
@@ -22,6 +22,7 @@ using ReactNative.Views.View;
 using ReactNative.Views.Web;
 using System;
 using System.Collections.Generic;
+using ReactNative.Modules.Linking;
 
 namespace ReactNative.Shell
 {
@@ -55,6 +56,7 @@ namespace ReactNative.Shell
                 //new StatusBarModule(),
                 //new VibrationModule(),
                 new WebSocketModule(reactContext),
+                new LinkingManagerModule(reactContext),
             };
         }
 
