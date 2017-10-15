@@ -23,6 +23,7 @@ using ReactNative.Views.Web;
 using System;
 using System.Collections.Generic;
 using ReactNative.Modules.Linking;
+using ReactNative.Modules.UIBridge;
 
 namespace ReactNative.Shell
 {
@@ -31,6 +32,8 @@ namespace ReactNative.Shell
     /// </summary>
     public class MainReactPackage : IReactPackage
     {
+
+
         /// <summary>
         /// Creates the list of native modules to register with the react
         /// instance.
@@ -59,6 +62,7 @@ namespace ReactNative.Shell
                 new LinkingManagerModule(reactContext),
             };
         }
+
 
         /// <summary>
         /// Creates the list of view managers that should be registered with

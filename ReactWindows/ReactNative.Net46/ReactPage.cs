@@ -2,6 +2,7 @@ using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using ReactNative.Common;
 using ReactNative.Modules.Core;
+using ReactNative.Modules.UIBridge;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace ReactNative
     {
         private readonly Lazy<ReactInstanceManager> _reactInstanceManager;
         private readonly Lazy<ReactRootView> _rootView;
+        protected UIBridge uiBridge;
 
         /// <summary>
         /// Instantiates the <see cref="ReactPage"/>.
@@ -132,6 +134,22 @@ namespace ReactNative
             RootView.Focus();
             RootView.FocusVisualStyle = null;
         }
+
+        protected void onUIBridgeInitialized(Object sender, UIBridge ui)
+        {
+            this.uiBridge = ui;
+            this.uiBridge.SendEvent += UiBridge_SendEvent;
+        }
+        
+
+         protected void UiBridge_SendEvent(object sender, JObject e)
+        {
+            uiBridge.acceptDirective(JObject.FromObject(new
+            {
+                shopping = "is cool"
+            }));
+        }
+
 
         /// <summary>
         /// Called before the application is suspended.

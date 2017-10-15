@@ -138,6 +138,7 @@
     <Compile Include="DevSupport\WebSocketJavaScriptExecutor.cs" />
     <Compile Include="Modules\DeviceInfo\DeviceInfoModule.cs" />
     <Compile Include="Modules\Dialog\DialogModule.cs" />
+    <Compile Include="Modules\EventHandler\UIBridge.cs" />
     <Compile Include="Modules\Image\BitmapImageHelpers.cs" />
     <Compile Include="Modules\Image\ImageLoaderModule.cs" />
     <Compile Include="Modules\Linking\LinkingManager.cs" />
