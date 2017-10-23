@@ -395,8 +395,13 @@ namespace ReactNative
             }
             else
             {
-                RecreateReactContextInBackgroundFromBundleLoader();
+                await RecreateReactContextAsync();
             }
+        }
+
+        private  async Task<bool> RecreateReactContextAsync(){
+            RecreateReactContextInBackgroundFromBundleLoader();
+            return true;
         }
 
         private void RecreateReactContextInBackgroundFromBundleLoader()

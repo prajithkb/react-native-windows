@@ -1,4 +1,4 @@
-﻿using ReactNative.Bridge;
+using ReactNative.Bridge;
 
 namespace ReactNative.Modules.Core
 {
@@ -14,6 +14,7 @@ namespace ReactNative.Modules.Core
         /// <param name="data">The event data.</param>
         public void emit(string eventName, object data)
         {
+            //System.Console.WriteLine("PKB {0} - {1}", eventName, data != null ? data.ToString() : "");
             Invoke(eventName, data);
         }
     }

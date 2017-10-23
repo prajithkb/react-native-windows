@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using ReactNative.Bridge;
 using ReactNative.Touch;
 using ReactNative.UIManager;
@@ -127,6 +127,7 @@ namespace ReactNative
         /// <returns>The desired size.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
+            //Console.WriteLine("PKB CALLE MEEEEE {0}" + availableSize);
             DispatcherHelpers.AssertOnDispatcher();
 
             var result = base.MeasureOverride(availableSize);

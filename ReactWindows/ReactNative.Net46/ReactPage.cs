@@ -125,6 +125,7 @@ namespace ReactNative
         /// <param name="initialProps">The initialProps.</param>
         public void OnCreate(string[] arguments, JObject initialProps)
         {
+            PerformanceMarker.start("onCreate");
             ApplyArguments(arguments);
             RootView.StartReactApplication(ReactInstanceManager, MainComponentName, initialProps);
 
@@ -133,22 +134,23 @@ namespace ReactNative
             RootView.Focusable = true;
             RootView.Focus();
             RootView.FocusVisualStyle = null;
+            PerformanceMarker.Print("onCreate");
         }
 
-        protected void onUIBridgeInitialized(Object sender, UIBridge ui)
-        {
-            this.uiBridge = ui;
-            this.uiBridge.SendEvent += UiBridge_SendEvent;
-        }
+        //protected void onUIBridgeInitialized(Object sender, UIBridge ui)
+       // {
+       //     this.uiBridge = ui;
+       //     this.uiBridge.SendEvent += UiBridge_SendEvent;
+       // }
         
 
-         protected void UiBridge_SendEvent(object sender, JObject e)
-        {
-            uiBridge.acceptDirective(JObject.FromObject(new
-            {
-                shopping = "is cool"
-            }));
-        }
+       //  protected void UiBridge_SendEvent(object sender, JObject e)
+       // {
+       //     uiBridge.acceptDirective(JObject.FromObject(new
+        //    {
+        //        shopping = "is cool"
+        //    }));
+        //}
 
 
         /// <summary>
@@ -167,6 +169,7 @@ namespace ReactNative
         /// </param>
         public void OnResume(Action onBackPressed)
         {
+            //Console.WriteLine("Called resume - PKB");
             ReactInstanceManager.OnResume(onBackPressed);
         }
 

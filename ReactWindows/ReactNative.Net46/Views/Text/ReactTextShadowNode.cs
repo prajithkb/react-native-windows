@@ -1,4 +1,4 @@
-﻿using Facebook.Yoga;
+using Facebook.Yoga;
 using ReactNative.Bridge;
 using ReactNative.Reflection;
 using ReactNative.UIManager;
@@ -195,7 +195,7 @@ namespace ReactNative.Views.Text
                 TextWrapping = TextWrapping.Wrap,
                 TextTrimming = TextTrimming.CharacterEllipsis,
             };
-
+            //Console.WriteLine("PKB - font size " + textNode._fontSize);
             textNode.UpdateTextBlockCore(textBlock, true);
 
             for (var i = 0; i < textNode.ChildCount; ++i)

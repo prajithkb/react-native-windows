@@ -1,4 +1,4 @@
-﻿using ReactNative.UIManager.Annotations;
+using ReactNative.UIManager.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -91,7 +91,8 @@ namespace ReactNative.UIManager
                 throw new ArgumentNullException(nameof(viewManager));
             if (props == null)
                 throw new ArgumentNullException(nameof(props));
-
+           // Console.WriteLine(props._props);
+            //Console.WriteLine("PKB -----");
             Invoke(viewManager, GetViewManagerArgs(view, props));
         }
 

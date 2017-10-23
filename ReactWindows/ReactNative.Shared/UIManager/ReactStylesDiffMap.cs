@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using ReactNative.Collections;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace ReactNative.UIManager
     /// </summary>
     public class ReactStylesDiffMap
     {
-        private readonly JObject _props;
+        public readonly JObject _props;
 
         /// <summary>
         /// Instantiates the <see cref="ReactStylesDiffMap"/>.

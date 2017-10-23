@@ -2,6 +2,7 @@ using ReactNative.Bridge;
 using ReactNative.Modules.Core;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -94,19 +95,32 @@ namespace ReactNative.Modules.DeviceInfo
             var content = (FrameworkElement)_window.Content;
             double scale = 1.0;
 
-            return new Dictionary<string, object>
+            var d =  new Dictionary<string, object>
             {
                 {
                     "window",
                     new Dictionary<string, object>
                     {
-                        { "width", content?.ActualWidth ?? 0.0 },
-                        { "height", content?.ActualHeight ?? 0.0 },
+                        { "width", getWidth(content, 350) },
+                        { "height", getHeight(content,550) },
                         { "scale", scale },
                         /* TODO: density and DPI needed? */
                     }
                 },
             };
+
+            return d;
+        }
+
+        static double getWidth(FrameworkElement content, double defaultValue)
+        {
+            var r = content?.ActualWidth ?? defaultValue;
+            return r == 0 ? defaultValue : r;
+        }
+        static double getHeight(FrameworkElement content, double defaultValue)
+        {
+            var r = content?.ActualHeight ?? defaultValue;
+            return r == 0 ? defaultValue : r;
         }
     }
 }

@@ -144,7 +144,7 @@ namespace ReactNative.DevSupport
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                System.Diagnostics.Debugger.Break();
+                //System.Diagnostics.Debugger.Break();
                 Exception e = exception;
                 while (e.InnerException != null) e = e.InnerException;
                 Console.WriteLine("Real cause : " + e.Message);

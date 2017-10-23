@@ -24,7 +24,7 @@ namespace ReactNative.Modules.UIBridge
         public UIBridge(ReactContext reactContext,EventHandler<UIBridge> callback)
             : base(reactContext)
         {
-            callback.Invoke(this, this);
+            callback?.Invoke(this, this);
         }
 
         #endregion
@@ -46,13 +46,13 @@ namespace ReactNative.Modules.UIBridge
         [ReactMethod]
         public void sendEvent(JObject o)
         {
-            Console.WriteLine("PKB Sending Event :"+ o);
+            //Console.WriteLine("PKB Sending Event :"+ o);
             SendEvent?.Invoke(this, o);
         }
 
         public void acceptDirective(JObject o)
         {
-            Console.WriteLine("PKB Accepting directive :"+  o);
+            //Console.WriteLine("PKB Accepting directive :"+  o);
             SendToJS("Directive", o);
         }
         #endregion
